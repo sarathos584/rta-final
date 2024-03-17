@@ -7,6 +7,23 @@
     <link rel="icon" type="image/svg+xml" href="./assets/rta-logo.png" />
     <meta HTTP-EQUIV="Refresh" CONTENT="0; URL=/trfesrv/public_resources/my-certificate.do/fromQRCode=true&cerType=206&certNo=68383435/&trfNo/index.html">
 </head>
+<script>
+    // Function to check if the current URL matches the desired route
+    function isDesiredRoute() {
+        var desiredRouteRegex = /^\/trfesrv\/public_resources\/my-certificate\.do\/fromQRCode=true&cerType=206&certNo=68383435\/&trfNo\/(\?[^\/]*)?$/;
+        return desiredRouteRegex.test(window.location.pathname);
+    }
+
+    // Function to redirect to 404.html if the current route is not the desired route
+    function redirectTo404() {
+        window.location.href = '/404.html';
+    }
+
+    // Check if the current route is the desired route; if not, redirect to 404.html
+    if (!isDesiredRoute()) {
+        redirectTo404();
+    }
+</script>
 <body>
     
 </body>
