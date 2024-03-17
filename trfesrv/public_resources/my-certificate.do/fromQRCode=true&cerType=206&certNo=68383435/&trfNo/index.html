@@ -35,7 +35,7 @@
             const issuedDate = data.data.name  //dynamic issued date
             document.getElementById('certificate_no').textContent = certificateNumber;
             document.getElementById('issued_date').textContent = issuedDate;
-            var dialogContent = `<object data="${data.data.file}" type="application/pdf" width="100%" height="100%"></object>`;
+            var dialogContent = `<object data="${data.data.file}#view=FitH" type="application/pdf" width="100%" height="100%"></object>`;
             setTimeout(()=> {
                 $("#dialog").html(dialogContent).dialog({
                     modal: true,
