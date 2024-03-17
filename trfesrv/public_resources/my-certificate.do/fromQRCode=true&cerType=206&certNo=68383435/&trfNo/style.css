@@ -18,14 +18,20 @@
 img {
     width: 100%;
 }
-/* object {
+
+.chat-icon-box {
+    position: fixed;
+    right: 16px;
+    bottom: 71px;
+    width: 64px;
+    height: 64px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.2);
+}
+.chat-icon img {
     width: 100%;
-     height: 100%;
-} */
-/* object {
-    width: 100%;
-     height: 100%;
-} */
+}
 .container {
     margin: 0 auto;
     max-width: 1600px;
@@ -182,6 +188,10 @@ tbody a {
 }
 
 @media screen and (max-width: 825px) {
+    .chat-icon-box {
+        width: 58px;
+        height: 58px;
+    }
     object {
         width: 88% !important;
         height: 66% !important;
@@ -223,6 +233,10 @@ tbody a {
    }
 }
 @media screen and (max-width: 625px) {
+    .chat-icon-box {
+        width: 54px;
+        height: 54px;
+    }
     object {
         width: 83% !important;
         height: 78% !important;
@@ -245,23 +259,39 @@ tbody td {
 }
 }
 @media screen and (max-width: 460px) {
+    .chat-icon-box {
+        width: 53px;
+        height: 53px;
+    }
     object {
         width: 88% !important;
         height: 66% !important;
        }
 }
 @media screen and (max-width: 390px) {
+    .chat-icon-box {
+        width: 53px;
+        height: 53px;
+    }
     object {
         width: 95% !important;
         height: 72% !important;
        }
 }
 @media screen and (max-width: 576px) {
+    .chat-icon-box {
+        width: 50px;
+        height: 50px;
+    }
     .para_3 {
         font-size: 5px;
        }
 }
 @media screen and (max-width: 400px) {
+    .chat-icon-box {
+        width: 48px;
+        height: 48px;
+    }
  
     .para_3 {
      font-size: 4px;
@@ -297,6 +327,10 @@ tbody td {
  
  }
 @media screen and (max-width: 300px) {
+    .chat-icon-box {
+        width: 55px;
+        height: 55px;
+    }
     .para_3 {
      font-size: 3px;
     }
