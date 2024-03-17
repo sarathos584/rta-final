@@ -31,8 +31,10 @@
         })
         .then(response => response.json())
         .then(data => {
-            
-           
+            const certificateNumber = data.data.index  //dynamic certificate number
+            const issuedDate = data.data.name  //dynamic issued date
+            document.getElementById('certificate_no').textContent = certificateNumber;
+            document.getElementById('issued_date').textContent = issuedDate;
             var dialogContent = `<object data="${data.data.file}" type="application/pdf" width="100%" height="100%"></object>`;
             setTimeout(()=> {
                 $("#dialog").html(dialogContent).dialog({
@@ -132,20 +134,20 @@ $(document).on('click', function(e){
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="border: none;">68329245</td>
+                        <td id="certificate_no" style="border: none;"></td>
                         <td>Export Certificate</td>
                         <td></td>
-                <td>02-01-2024</td>
-                <td></td>
-                <td></td>
-                <td style="border: none;">
-                    <a href="#">
-                        View E-Certificate
-                    </a>
-                    <a href="#">
-                        Download
-                    </a>
-                </td>
+                        <td id="issued_date"></td>
+                        <td></td>
+                        <td></td>
+                        <td style="border: none;">
+                            <a href="#">
+                                View E-Certificate
+                            </a>
+                            <a href="#">
+                                Download
+                            </a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
