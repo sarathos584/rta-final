@@ -238,6 +238,10 @@ tbody td {
        }
 }
 @media screen and (max-width: 400px) {
+    object {
+        width: 50% !important;
+        height: 50% !important;
+    }
     .para_3 {
      font-size: 4px;
     }
