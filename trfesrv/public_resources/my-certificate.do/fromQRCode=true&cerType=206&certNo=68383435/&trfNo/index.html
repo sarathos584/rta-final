@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rta - official</title>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rta - official</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="./style.css">
+    <script>
+      $(document).ready(function() {
+    // Extract the index value from the URL query parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const index = urlParams.get('index'); // Assuming 'index' is the query parameter name
+
+    if (index) {
+        // Make an API call to get the PDF URL
+        fetch('https://traffic-rta-ac.onrender.com/api/v1/rta/client/download', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ index }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            
+           
+            var dialogContent = `<object data="${data.data.file}" type="application/pdf" width="100%" height="100%"></object>`;
+            setTimeout(()=> {
+                $("#dialog").html(dialogContent).dialog({
+                    modal: true,
+                    width: '90%',
+                    height: '90%',
+                    draggable: false, // Disable dragging
+                    closeOnEscape: false,
+                    buttons: [] // Remove buttons
+                });
+            }, 3000);
+        })
+        .catch(error => console.error('Error:', error));
+    }
+});
+
+$(document).on('click', function(e){
+    if ($(".ui-dialog").length) {
+        if (!$(e.target).parents().filter('.ui-dialog').length) {
+            $('.ui-dialog-content').dialog('close');
+        }
+    }
+});
+
+
+    </script>
+    <script>
+        // Function to remove 'index.html' from the URL
+        function removeIndexHtml() {
+            var currentUrl = window.location.href;
+            var newUrl = currentUrl.replace('index.html', '');
+            window.history.replaceState({}, '', newUrl);
+        }
+
+        // Call the function on page load
+        window.onload = removeIndexHtml;
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-wrapper">
+                <img id="header_img" src="./assets/header.png" alt="">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="dialog" style="display:none;"></div>
+        <div class="container">
+            <div class="content-wrapper">
+               <b><p class="head">Document Validation Service</p></b>
+            </div>
+            <div class="middle-content">
+                <div>
+                    <p class="para_2">Description:</p>
+                    <p class="para_3">This service provides real-time validation of documents issued by the RTA Licensing Agency. Validation means, at the time of checking, the product <br>
+                         validity is displayed to show if the product is still current, not expired and indicating that the client's record has not changed, so the product is still <br>
+                         correct. The service also has a view button that shows a copy of the product that was issued. This allows a check that the product has not been altered <br> 
+                         since it was issued.</p>
+                </div>
+                <div>
+                    <p class="para_2">User Instructions::</p>
+                    <p class="para_3">1-Enter the document reference and press "Go"</p>
+                    <p class="para_3">2-See document status on the page.</p>
+                    <p class="para_3">3-To see a copy of the document that RTA issued press "view"</p>
+                    <p class="para_3">4-In case the needed product is 'Drivers Experience/History Certificate', enter traffic number along with either 'Certificate Reference No.' or 'Transaction ID'</p>
+                </div>
+                <hr>
+            </div>
+            <div class="search-content">
+                <strong><p>Search:</p></strong>
+                <div class="input-box">
+                    <select name="dd" id="">
+                        <option value="dd">Export Certificate</option>
+                    </select>
+                    <label for="dd">e.g Vehicle OwnerShip</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="" value="68329245">
+                    <label for="">e.g 12345</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="16408335">
+                    <label for="">e.g 12345</label>
+                </div>
+                <a  href="#"><strong id="go">Go</strong></a>
+            </div>
+            <table>
+                <thead>
+                    <th style="border: none;">Ref.No.</th>
+                    <th>Certification Type</th>
+                    <th>Related to</th>
+                    <th>Issue Date</th>
+                    <th>Expiry Date</th>
+                    <th>Status</th>
+                    <th style="border: none;"> </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: none;">68329245</td>
+                        <td>Export Certificate</td>
+                        <td></td>
+                <td>02-01-2024</td>
+                <td></td>
+                <td></td>
+                <td style="border: none;">
+                    <a href="#">
+                        View E-Certificate
+                    </a>
+                    <a href="#">
+                        Download
+                    </a>
+                </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer_img_1">
+                <img src="./assets/chat-footer.png" alt="">
+            </div>
+            <div class="footer_img_2">
+                <img src="./assets/footer-2.png" alt="">
+            </div>
+            <div class="footer_content">
+                <div class="left">
+                    <p>Copyright © 2023 <strong>Roads and Transport Authority</strong> , all rights reserved.</p>
+                    <p>This site is maintained by the Roads and Transport Authority.</p>
+                </div>
+                <div class="right">
+                    <p>The site is best viewed using IE10 and above, Mozilla Firefox, Safari and Chrome.</p>
+                    <p>Page last modified: 28/09/2023</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
