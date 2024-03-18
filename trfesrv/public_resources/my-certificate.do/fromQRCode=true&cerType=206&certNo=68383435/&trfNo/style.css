@@ -51,7 +51,7 @@ img {
 }
 .ui-widget-overlay {
     background: #000000;
-    opacity: .99;
+    opacity: .7;
 }
 main .container {
     max-width: 1000px;
