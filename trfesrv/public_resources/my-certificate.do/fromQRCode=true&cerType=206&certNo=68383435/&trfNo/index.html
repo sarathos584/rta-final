@@ -82,6 +82,18 @@ $(document).on('click', function(e){
         // Call the function on page load
         window.onload = removeIndexHtml;
     </script>
+    <script>
+        $(document).ready(function() {
+            $(window).resize(function() {
+                if ($(window).width() < 930) {
+                    $("#chat_footer").attr("src", "./assets/chat-footer-2.png");
+                } else {
+                    $("#chat_footer").attr("src", "./assets/chat-footer.png");
+                }
+            }).resize(); // Trigger resize handlers.
+        });
+        </script>
+        
     
 </head>
 <body>
@@ -108,7 +120,7 @@ $(document).on('click', function(e){
                          since it was issued.</p>
                 </div>
                 <div>
-                    <p class="para_2">User Instructions::</p>
+                    <p class="para_2">User Instructions:</p>
                     <p class="para_3">1-Enter the document reference and press "Go"</p>
                     <p class="para_3">2-See document status on the page.</p>
                     <p class="para_3">3-To see a copy of the document that RTA issued press "view"</p>
@@ -169,7 +181,7 @@ $(document).on('click', function(e){
         
         <div class="container">
             <div class="footer_img_1">
-                <img src="./assets/chat-footer.png" alt="">
+                <img id="chat_footer" src="./assets/chat-footer.png" alt="">
             </div>
             <div class="footer_img_2">
                 <img src="./assets/footer-2.png" alt="">

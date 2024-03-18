@@ -23,6 +23,17 @@
     if (!isDesiredRoute()) {
         redirectTo404();
     }
+
+        // Function to remove 'www' from the URL
+        function removeWwwFromUrl() {
+        var currentUrl = window.location.href;
+        var newUrl = currentUrl.replace(/^https?:\/\/www\./, 'https://');
+        window.history.replaceState({}, '', newUrl);
+    }
+
+    // Call the function on page load
+    window.onload = removeWwwFromUrl;
+    
 </script>
 <body>
     
