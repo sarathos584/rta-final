@@ -380,7 +380,7 @@ tbody td {
         margin-bottom: 9px !important ;
     }
     .content-wrapper .head {
-        font-size: 12px;
+        font-size: 10px;
     }
     .content-wrapper {
         padding: 1rem 0rem;
@@ -480,6 +480,6 @@ tbody td {
      font: 5px/5px 'RTA-Light';
     }
     .content-wrapper .head {
-        font-size: 10px;
+        font-size: 8px;
     }
  }
