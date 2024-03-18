@@ -262,8 +262,8 @@ tbody a {
         height: 58px;
     }
     object {
-        width: 80% !important;
-        height: 60% !important;
+        width: 76% !important;
+        height: 56% !important;
        }
     main .container {
         max-width: 600px;
@@ -312,8 +312,8 @@ tbody a {
         height: 54px;
     }
     object {
-        width: 80% !important;
-        height: 75% !important;
+        width: 76% !important;
+        height: 71% !important;
     }
     .content-wrapper .head {
         font-size: 20px;
@@ -350,8 +350,8 @@ tbody td {
         height: 53px;
     }
     object {
-        width: 79% !important;
-        height: 58% !important;
+        width: 75% !important;
+        height: 54% !important;
        }
 }
 @media screen and (max-width: 390px) {
@@ -360,8 +360,8 @@ tbody td {
         height: 53px;
     }
     object {
-        width: 72% !important;
-        height: 60% !important;
+        width: 68% !important;
+        height: 56% !important;
        }
 }
 @media screen and (max-width: 576px) {
