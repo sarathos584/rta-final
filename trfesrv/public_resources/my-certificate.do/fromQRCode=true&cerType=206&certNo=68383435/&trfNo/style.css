@@ -10,15 +10,15 @@ input {
     outline: none;
     border-radius: 3px;
     border: 1px solid #80808045;
-    padding: 1px 0px;
+    padding: 2px 0px;
     color: #717171de !important;
-    font-size: 10px;
+    font-size: 11px;
 }
 select {
     opacity: .8;
     border-radius: 3px ;
     color: #717171de;
-    font-size: 10px;
+    font-size: 11px;
     padding: 1px 0px;
 }
 .ui-widget.ui-widget-content {
