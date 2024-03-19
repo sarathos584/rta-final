@@ -89,8 +89,9 @@ main .container {
     line-height: 1.5em;
 }
 hr {
-    color: #333;
+    color: #33333370;
     margin-bottom: 2rem;
+    opacity: 0.3;
 }
 .search-content {
     display: grid;
