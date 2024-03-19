@@ -10,13 +10,13 @@ input {
     outline: none;
     border-radius: 3px;
     border: 1px solid #80808045;
-    padding: 1px;
+    /* padding: 1px; */
     color: #717171de !important;
     font-size: 12px;
 }
 select {
-    padding: 1px;
-    background: rgba(128, 128, 128, 0.116);
+    /* padding: 1px; */
+    /* background: rgba(128, 128, 128, 0.116); */
     opacity: .6;
     border-radius: 3px ;
     color: #717171de;
