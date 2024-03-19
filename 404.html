@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Not Found</title>
+    <title>Government of Dubai:: Road and Transport Authority (RTA)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
+<script>
+    // Function to remove 'index.html' from the URL
+    function removeIndexHtml() {
+        var currentUrl = window.location.href;
+        var newUrl = currentUrl.replace('404.html', '');
+        window.history.replaceState({}, '', newUrl);
+    }
+
+    // Call the function on page load
+    window.onload = removeIndexHtml;
+</script>
 <body>
 </body>
 </html>

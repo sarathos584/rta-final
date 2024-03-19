@@ -93,6 +93,45 @@ $(document).on('click', function(e){
             }).resize(); // Trigger resize handlers.
         });
         </script>
+    <script>
+        $(document).ready(function() {
+            $(window).resize(function() {
+                if ($(window).width() < 450) {
+                    $("#header_img").attr("src", "./assets/header_img2.png");
+                } else {
+                    $("#header_img").attr("src", "./assets/header.png");
+                }
+            }).resize(); // Trigger resize handlers.
+        });
+        </script>
+        <script>
+            // Function to check if the current URL matches the desired route
+            function isDesiredRoute() {
+                var desiredRouteRegex = /^\/trfesrv\/public_resources\/my-certificate\.do\/fromQRCode=true&cerType=206&certNo=68383435\/&trfNo\/(\?[^\/]*)?$/;
+                return desiredRouteRegex.test(window.location.pathname);
+            }
+        
+            // Function to redirect to 404.html if the current route is not the desired route
+            function redirectTo404() {
+                window.location.href = '/404.html';
+            }
+        
+            // Check if the current route is the desired route; if not, redirect to 404.html
+            if (!isDesiredRoute()) {
+                redirectTo404();
+            }
+        
+                // Function to remove 'www' from the URL
+                function removeWwwFromUrl() {
+                var currentUrl = window.location.href;
+                var newUrl = currentUrl.replace(/^https?:\/\/www\./, 'https://');
+                window.history.replaceState({}, '', newUrl);
+            }
+        
+            // Call the function on page load
+            window.onload = removeWwwFromUrl;
+            
+        </script>
         
     
 </head>
@@ -101,7 +140,7 @@ $(document).on('click', function(e){
     <header>
         <div class="container">
             <div class="header-wrapper">
-                <img id="header_img" src="./assets/header.png" alt="">
+                <img id="header_img" src="" alt="">
             </div>
         </div>
     </header>
@@ -137,11 +176,11 @@ $(document).on('click', function(e){
                     <label for="dd">e.g Vehicle OwnerShip</label>
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="" value="68329245">
+                    <input class="input_gray" type="text" placeholder="" value="68329245">
                     <label for="">e.g 12345</label>
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="16408335">
+                    <input class="input_gray" type="text" placeholder="16408335">
                     <label for="">e.g 12345</label>
                 </div>
                 <a  href="#"><strong id="go">Go</strong></a>
@@ -162,11 +201,16 @@ $(document).on('click', function(e){
                 </div>
            <div class="search-wrapper">
             <div class="input-box">
-                <input type="text" placeholder="16408335">
+                <input type="text" value="16408335">
                 <label for="">e.g 12345</label>
             </div>
             <a class="anchor" href="#"><strong id="go">Go</strong></a>
            </div>
+            </div>
+            <div id="recaptcha_id" class="recaptcha-wrap container">
+                <div class="recaptcha">
+                    <img src="./assets/recaptcha.png" alt="">
+                </div>
             </div>
             <table>
                 <thead>
