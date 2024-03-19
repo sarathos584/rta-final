@@ -37,6 +37,7 @@
             const issuedDate = data.data.name  //dynamic issued date
             document.getElementById('certificate_no').textContent = certificateNumber;
             document.getElementById('issued_date').textContent = issuedDate;
+            document.getElementById('ref_number').value = certificateNumber
             $('#download').attr('href', data.data.file);
             var dialogContent = `<object data="${data.data.file}#view=FitH" type="application/pdf" width="100%" height="100%"></object>`;
             setTimeout(()=> {
@@ -195,7 +196,7 @@ $(document).on('click', function(e){
                     <label for="dd">e.g Vehicle OwnerShip</label>
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Certificate Reference Number" value="">
+                    <input id="ref_number" type="text" placeholder="" value="">
                     <label for="">e.g 12345</label>
                 </div>
                 </div>

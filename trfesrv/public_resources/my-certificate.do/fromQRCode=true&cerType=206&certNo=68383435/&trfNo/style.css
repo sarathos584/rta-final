@@ -10,17 +10,16 @@ input {
     outline: none;
     border-radius: 3px;
     border: 1px solid #80808045;
-    /* padding: 1px; */
+    padding: 1px 0px;
     color: #717171de !important;
-    font-size: 12px;
+    font-size: 10px;
 }
 select {
-    /* padding: 1px; */
-    /* background: rgba(128, 128, 128, 0.116); */
-    opacity: .6;
+    opacity: .8;
     border-radius: 3px ;
     color: #717171de;
-    font-size: 12px;
+    font-size: 10px;
+    padding: 1px 0px;
 }
 .ui-widget.ui-widget-content {
     height: 85vh !important;
@@ -128,7 +127,7 @@ hr {
 }
 #go {
     padding: 2px 9px;
-    border: 1px solid gray;
+    border: 1px solid #00000038;
     border-radius: 20px ;
 }
     
@@ -441,7 +440,7 @@ tbody td {
         max-width: 64%;
     }
     table {
-        width:  66%;
+        width:  75%;
     }
     thead th, tbody td, tbody a {
         font-size: 5px;
@@ -477,7 +476,7 @@ tbody td {
 }
 @media screen and (max-width: 400px) {
     table {
-        width: 76%;
+        width: 80%;
     }
     .chat-icon-box {
         width: 48px;
@@ -505,7 +504,7 @@ tbody td {
      font-size: 4px;
     }
     table {
-     width: 70%;
+     width: 75%;
      margin: 10px auto;
     }
     .footer_content p {
